@@ -23,9 +23,7 @@
     "created_at": "02.05.2023",
     "category": "Quote",
     "content": "Be not afraid of greatness.",
-    "dates": [
-      "02.05.2023"
-    ],
+    "dates": ["02.05.2023"],
     "isArchived": false
   },
   {
@@ -34,9 +32,7 @@
     "created_at": "2023.17.07",
     "category": "Task",
     "content": "By new instruments",
-    "dates": [
-      "02.06.2023"
-    ],
+    "dates": ["02.06.2023"],
     "isArchived": false
   },
   {
@@ -54,35 +50,6 @@
     "created_at": "03.05.2023",
     "category": "Quote",
     "content": "Courage is knowing what not to fear",
-    "dates": [],
-    "isArchived": false
-  },
-  {
-    "id": "MLgdU487TlFAv-1kCX9G4",
-    "created_at": "04.08.2023 01:41:22",
-    "name": "Shopping list",
-    "category": "Task",
-    "content": "Mango, tomatos",
-    "dates": [
-      "12.12.2022"
-    ],
-    "isArchived": false
-  },
-  {
-    "id": "24Ql_txg6OKJDYHx9e3_R",
-    "created_at": "04.08.2023 01:41:47",
-    "name": "Shopping list",
-    "category": "Task",
-    "content": "Mango, tomatos",
-    "dates": [],
-    "isArchived": false
-  },
-  {
-    "id": "NbBKfUJoz3CSh0HRbvc19",
-    "created_at": "04.08.2023 02:37:30",
-    "name": "Shopping list",
-    "category": "",
-    "content": "Mango, tomatos",
     "dates": [],
     "isArchived": false
   }
