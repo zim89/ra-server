@@ -3,7 +3,14 @@ const path = require("path");
 const { nanoid } = require("nanoid");
 const moment = require("moment");
 
-const notesPath = path.join(__dirname, "notes.json");
+const categories = [
+  { id: "1", label: "Task", value: "Task" },
+  { id: "2", label: "Quote", value: "Quote" },
+  { id: "3", label: "Idea", value: "Idea" },
+  { id: "4", label: "Random Thought", value: "Random Thought" },
+];
+
+const notesPath = path.join(__dirname, "data", "notes.json");
 
 const listNotes = async () => {
   const result = await fs.readFile(notesPath);
@@ -65,10 +72,29 @@ const updateNote = async (id, body) => {
   return notes[index];
 };
 
+const getStats = async () => {
+  const notes = await listNotes();
+  const stats = [];
+
+  categories.forEach((cat) => {
+    const item = { category: cat.label, active: 0, archived: 0 };
+    const filteredNotes = notes.filter((note) => note.category === cat.label);
+    filteredNotes.forEach((el) => {
+      el.isArchived
+        ? (item.archived = item.archived + 1)
+        : (item.active = item.active + 1);
+    });
+    stats.push(item);
+  });
+
+  return stats;
+};
+
 module.exports = {
   listNotes,
   getNoteById,
   removeNote,
   addNote,
   updateNote,
+  getStats,
 };

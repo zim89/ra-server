@@ -20,6 +20,9 @@ const updateNoteSchema = Joi.object({
   isArchived: Joi.boolean().required(),
 });
 
+// @desc    Get all notes
+// @route 	GET /api/notes
+// @access  Public
 router.get("/", async (req, res, next) => {
   try {
     const result = await notes.listNotes();
@@ -29,6 +32,21 @@ router.get("/", async (req, res, next) => {
   }
 });
 
+// @desc    Get notes stats
+// @route 	GET /api/notes/stats
+// @access  Public
+router.get("/stats", async (req, res, next) => {
+  try {
+    const result = await notes.getStats();
+    res.json(result);
+  } catch (error) {
+    next(error);
+  }
+});
+
+// @desc    Get note by id
+// @route 	GET /api/notes/:noteId
+// @access  Public
 router.get("/:noteId", async (req, res, next) => {
   try {
     const { noteId } = req.params;
@@ -40,6 +58,9 @@ router.get("/:noteId", async (req, res, next) => {
   }
 });
 
+// @desc    Create note
+// @route 	POST /api/notes
+// @access  Public
 router.post("/", async (req, res, next) => {
   try {
     const { error } = addNoteSchema.validate(req.body);
@@ -51,6 +72,9 @@ router.post("/", async (req, res, next) => {
   }
 });
 
+// @desc    Delete note
+// @route 	DELETE /api/notes/:noteId
+// @access  Public
 router.delete("/:noteId", async (req, res, next) => {
   try {
     const { noteId } = req.params;
@@ -62,6 +86,9 @@ router.delete("/:noteId", async (req, res, next) => {
   }
 });
 
+// @desc    Update note
+// @route 	PATCH /api/notes/:noteId
+// @access  Public
 router.patch("/:noteId", async (req, res, next) => {
   try {
     const { error } = updateNoteSchema.validate(req.body);

@@ -1,0 +1,6 @@
+[
+  { "id": "1", "label": "Task", "value": "Task" },
+  { "id": "2", "label": "Quote", "value": "Quote" },
+  { "id": "3", "label": "Idea", "value": "Idea" },
+  { "id": "4", "label": "Random Thought", "value": "Random Thought" }
+]
